@@ -1,0 +1,175 @@
+{
+	"en": {
+		"SKILL_NAME": "Green House",
+		"GET_FACT_MESSAGE": "Here's your green fact: {}",
+		"HELP_MESSAGE": "You can say tell me a green fact, or, you can say stop... What can I help you with?",
+		"HELP_REPROMPT": "What can I help you with?",
+		"FALLBACK_MESSAGE": "The Green House skill can't help you with that.  It can help you discover eco facts if you say tell me an eco or a green fact. What can I help you with?",
+		"FALLBACK_REPROMPT": "What can I help you with?",
+		"ERROR_MESSAGE": "Sorry, an error occurred.",
+		"STOP_MESSAGE": "Goodbye!",
+		"FACTS": [
+			"Syntetic fibers release microplastics to the environment",
+			"Only two percent of the materials are actually recycled, zero waste will always be the objective",
+			"It is not about being one hundread zero waste, it is about creating sustainable habits every day",
+			"Toothbrush cannot be recycled. A bamboo one is a cleaner choice",
+			"Standard sponges are made out of plastic fibers. Consider buying a sea or vegetal sponge",
+			"If you consume any nutricional supplements, you can use an old jar as a mixer. Shake it!"
+		]
+	},
+	"en-AU": {
+		"SKILL_NAME": "Australian Space Facts"
+	},
+	"en-CA": {
+		"SKILL_NAME": "Canadian Space Facts"
+	},
+	"en-GB": {
+		"SKILL_NAME": "British Space Facts"
+	},
+	"en-IN": {
+		"SKILL_NAME": "Indian Space Facts"
+	},
+	"es": {
+		"SKILL_NAME": "Curiosidades del Espacio",
+		"GET_FACT_MESSAGE": "Aquí está tu curiosidad: {}",
+		"HELP_MESSAGE": "Puedes decir dime una curiosidad del espacio o puedes decir salir... Cómo te puedo ayudar?",
+		"HELP_REPROMPT": "Como te puedo ayudar?",
+		"FALLBACK_MESSAGE": "La skill Curiosidades del Espacio no te puede ayudar con eso.  Te puede ayudar a descubrir curiosidades sobre el espacio si dices dime una curiosidad del espacio. Como te puedo ayudar?",
+		"FALLBACK_REPROMPT": "Como te puedo ayudar?",
+		"ERROR_MESSAGE": "Lo sentimos, se ha producido un error.",
+		"STOP_MESSAGE": "Adiós!",
+		"FACTS": [
+			"Un año en Mercurio es de solo 88 días",
+			"A pesar de estar más lejos del Sol, Venus tiene temperaturas más altas que Mercurio",
+			"En Marte el sol se ve la mitad de grande que en la Tierra",
+			"Jupiter tiene el día más corto de todos los planetas",
+			"El sol es una esféra casi perfecta"
+		]
+	},
+	"es-ES": {
+		"SKILL_NAME": "Curiosidades del Espacio para España"
+	},
+	"es-MX": {
+		"SKILL_NAME": "Curiosidades del Espacio para México"
+	},
+	"es-US": {
+		"SKILL_NAME": "Curiosidades del Espacio para Estados Unidos"
+	},
+	"fr": {
+		"SKILL_NAME": "Anecdotes de l'Espace",
+		"GET_FACT_MESSAGE": "Voici votre anecdote : {}",
+		"HELP_MESSAGE": "Vous pouvez dire donne-moi une anecdote, ou, vous pouvez dire stop... Comment puis-je vous aider?",
+		"HELP_REPROMPT": "Comment puis-je vous aider?",
+		"FALLBACK_MESSAGE": "La skill des anecdotes de l'espace ne peux vous aider avec cela. Je peux vous aider à découvrir des anecdotes sur l'espace si vous dites par exemple, donne-moi une anecdote. Comment puis-je vous aider?",
+		"FALLBACK_REPROMPT": "Comment puis-je vous aider?",
+		"ERROR_MESSAGE": "Désolé, une erreur est survenue.",
+		"STOP_MESSAGE": "Au revoir!",
+		"FACTS": [
+			"Une année sur Mercure ne dure que 88 jours.",
+			"En dépit de son éloignement du Soleil, Vénus connaît des températures plus élevées que sur Mercure.",
+			"Sur Mars, le Soleil apparaît environ deux fois plus petit que sur Terre.",
+			"De toutes les planètes, Jupiter a le jour le plus court.",
+			"Le Soleil est une sphère presque parfaite."
+		]
+	},
+	"fr-FR": {
+		"SKILL_NAME": "Anecdotes françaises de l'espace"
+	},
+	"fr-CA": {
+		"SKILL_NAME": "Anecdotes canadiennes de l'espace"
+	},
+	"hi": {
+		"SKILL_NAME": "???????? facts",
+		"GET_FACT_MESSAGE": "?? ????? ???? fact: {}",
+		"HELP_MESSAGE": "?? ???? ??? fact ????? ??? ???? ??? ?? ??? exit ?? ??? ???? ???... ?? ???? ???? ????????",
+		"HELP_REPROMPT": "??? ???? ??? ?????? ?? ?????? ?? ???? ????",
+		"ERROR_MESSAGE": "????, ??? ?? ??? ???? ????. ???? ?? repeat ?? ???? ????",
+		"STOP_MESSAGE": "????? bye, ??? ????? ???",
+		"FACTS": [
+			"??? ??? ??? ?? ??? ??? ???? ????? ??? ???? ???",
+			"???? ?? ??? ???? ?? ??????, Venus ?? ?????? Mercury ?? ??????? ???? ???",
+			"Earth ?? ????? ?? Mars ??? ???? ?? size ??????? ??? ???",
+			"???? ?????? ??? Jupiter ?? ??? ???? ?? ???",
+			"???? ?? shape ???? ???? ???? ??? ???"
+		]
+	},
+	"hi-IN": {
+		"SKILL_NAME": "???????? ????????"
+	},
+	"it": {
+		"SKILL_NAME": "Aneddoti dallo spazio",
+		"GET_FACT_MESSAGE": "Ecco il tuo aneddoto: {}",
+		"HELP_MESSAGE": "Puoi chiedermi un aneddoto dallo spazio o puoi chiudermi dicendo 'esci'... Come posso aiutarti?",
+		"HELP_REPROMPT": "Come posso aiutarti?",
+		"FALLBACK_MESSAGE": "Non posso aiutarti con questo. Posso aiutarti a scoprire fatti e aneddoti sullo spazio, basta che mi chiedi di dirti un aneddoto. Come posso aiutarti?",
+		"FALLBACK_REPROMPT": "Come posso aiutarti?",
+		"ERROR_MESSAGE": "Spiacenti, si è verificato un errore.",
+		"STOP_MESSAGE": "A presto!",
+		"FACTS": [
+			"Sul pianeta Mercurio, un anno dura solamente 88 giorni.",
+			"Pur essendo più lontana dal Sole, Venere ha temperature più alte di Mercurio.",
+			"Su Marte il sole appare grande la metà che su la terra.",
+			"Tra tutti i pianeti del sistema solare, la giornata più corta è su Giove.",
+			"Il Sole è quasi una sfera perfetta."
+		]
+	},
+	"it-IT": {
+		"SKILL_NAME": "Aneddoti dallo spazio"
+	},
+	"ja": {
+		"SKILL_NAME": "???????",
+		"GET_FACT_MESSAGE": "???????? {}",
+		"HELP_MESSAGE": "??????????????????????????????????????????????",
+		"HELP_REPROMPT": "???????",
+		"ERROR_MESSAGE": "????????????????????",
+		"STOP_MESSAGE": "?????",
+		"FACTS": [
+			"?????????88????",
+			"???????????????????????????????????",
+			"?????????????????????????????????????????",
+			"??????????????????????????????????",
+			"???<sub alias='????'>1?</sub>??????????????",
+			"???????50???????????????????"
+		]
+	},
+	"ja-JP": {
+		"SKILL_NAME": "???????"
+	},
+	"pt": {
+		"SKILL_NAME": "Fatos Espaciais",
+		"GET_FACT_MESSAGE": "Aqui vai: {}",
+		"HELP_MESSAGE": "Você pode me perguntar por um fato interessante sobre o espaço, ou, fexar a skill. Como posso ajudar?",
+		"HELP_REPROMPT": "O que vai ser?",
+		"FALLBACK_MESSAGE": "A skill fatos espaciais não tem uma resposta para isso. Ela pode contar informações interessantes sobre o espaço, é só perguntar. Como posso ajudar?",
+		"FALLBACK_REPROMPT": "Eu posso contar fatos sobre o espaço. Como posso ajudar?",
+		"ERROR_MESSAGE": "Desculpa, algo deu errado.",
+		"STOP_MESSAGE": "Tchau!",
+		"FACTS": [
+			"Um ano em Mercúrio só dura 88 dias.",
+			"Apesar de ser mais distante do sol, Venus é mais quente que Mercúrio.",
+			"Visto de marte, o sol parece ser metade to tamanho que nós vemos da terra.",
+			"Júpiter tem os dias mais curtos entre os planetas no nosso sistema solar.",
+			"O sol é quase uma esfera perfeita."
+		]
+	},
+	"pt-BR": {
+		"SKILL_NAME": "Fatos Espaciais"
+	},
+	"de-DE": {
+		"SKILL_NAME": "Weltraumwissen",
+		"GET_FACT_MESSAGE": "Hier sind deine Fakten: {}",
+		"HELP_MESSAGE": "Du kannst sagen, „Nenne mir einen Fakt über den Weltraum“, oder du kannst „Beenden“ sagen... Wie kann ich dir helfen?",
+		"HELP_REPROMPT": "Wie kann ich dir helfen?",
+		"FALLBACK_MESSAGE": "Die Weltraumfakten Skill kann dir dabei nicht helfen. Sie kann dir Fakten über den Raum erzählen, wenn du dannach fragst.",
+		"FALLBACK_REPROMPT": "Wie kann ich dir helfen?",
+		"ERROR_MESSAGE": "Es ist ein Fehler aufgetreten.",
+		"STOP_MESSAGE": "Auf Wiedersehen!",
+		"FACTS": [
+			"Ein Jahr dauert auf dem Merkur nur 88 Tage.",
+			"Die Venus ist zwar weiter von der Sonne entfernt, hat aber höhere Temperaturen als Merkur.",
+			"Venus dreht sich entgegen dem Uhrzeigersinn, möglicherweise aufgrund eines früheren Zusammenstoßes mit einem Asteroiden.",
+			"Auf dem Mars erscheint die Sonne nur halb so groß wie auf der Erde.",
+			"Jupiter hat den kürzesten Tag aller Planeten."
+		]
+	}
+}

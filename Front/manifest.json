@@ -1,0 +1,83 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "green house",
+            "modelConfiguration": {
+                "fallbackIntentSensitivity": {
+                    "level": "LOW"
+                }
+            },
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": [
+                        "wait",
+                        "one second",
+                        "cancel"
+                    ]
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": [
+                        "help",
+                        "I am lost"
+                    ]
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": [
+                        "stop",
+                        "no more",
+                        "thank you",
+                        "thank you very much",
+                        "stop the app",
+                        "stop green house"
+                    ]
+                },
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "GetNewFactIntent",
+                    "slots": [],
+                    "samples": [
+                        "a fact",
+                        "a sustainable fact",
+                        "a eco fact",
+                        "a green fact",
+                        "tell me a fact",
+                        "tell me a green fact",
+                        "tell me an eco fact",
+                        "tell me a sustainable fact",
+                        "give me a fact",
+                        "give me an eco fact",
+                        "give me a green fact",
+                        "give me an sustainable fact",
+                        "tell me trivia",
+                        "tell me an eco trivia",
+                        "tell me an sustainable trivia",
+                        "tell me a green trivia",
+                        "give me trivia",
+                        "give me an eco trivia",
+                        "give me a green trivia",
+                        "give me some information",
+                        "give me some eco information",
+                        "give me sustainable information",
+                        "give me some green information",
+                        "give me green information",
+                        "tell me something",
+                        "give me something"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": [
+                        "home"
+                    ]
+                }
+            ],
+            "types": []
+        }
+    }
+}
