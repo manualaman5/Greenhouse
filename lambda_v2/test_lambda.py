@@ -1,12 +1,18 @@
 import os
+import random
 import logging
+import json
+import prompts
+
 import ask_sdk_core.utils as ask_utils
 
 from ask_sdk_core.skill_builder import SkillBuilder
-from ask_sdk_core.dispatch_components import AbstractRequestHandler
-from ask_sdk_core.dispatch_components import AbstractExceptionHandler
+from ask_sdk_core.dispatch_components import (
+    AbstractRequestHandler, AbstractExceptionHandler,
+    AbstractRequestInterceptor, AbstractResponseInterceptor)
 from ask_sdk_core.handler_input import HandlerInput
 
+from ask_sdk_model.ui import SimpleCard
 from ask_sdk_model import Response
 
 logger = logging.getLogger(__name__)
@@ -17,7 +23,6 @@ class LaunchRequestHandler(AbstractRequestHandler):
     """Handler for Skill Launch."""
     def can_handle(self, handler_input):
         # type: (HandlerInput) -> bool
-
         return ask_utils.is_request_type("LaunchRequest")(handler_input)
 
     def handle(self, handler_input):
@@ -30,6 +35,28 @@ class LaunchRequestHandler(AbstractRequestHandler):
                 .ask(speak_output)
                 .response
         )
+
+# Built-in Intent Handlers
+class GetNewFactHandler(AbstractRequestHandler):
+    """Handler for Skill Launch and GetNewFact Intent."""
+
+    def can_handle(self, handler_input):
+        # type: (HandlerInput) -> bool
+        return ask_utils.is_intent_name("GetNewFactIntent")(handler_input)
+
+    def handle(self, handler_input):
+        # type: (HandlerInput) -> Response
+        logger.info("In GetNewFactHandler")
+
+        # get localization data
+        data = handler_input.attributes_manager.request_attributes["_"]
+
+        random_fact = random.choice(data[prompts.FACTS])
+        speech = data[prompts.GET_FACT_MESSAGE].format(random_fact)
+
+        handler_input.response_builder.speak(speech).set_card(
+            SimpleCard(data[prompts.SKILL_NAME], random_fact))
+        return handler_input.response_builder.response
 
 
 class HelloWorldIntentHandler(AbstractRequestHandler):
@@ -177,7 +204,9 @@ class CatchAllExceptionHandler(AbstractExceptionHandler):
 
 sb = SkillBuilder()
 
+
 sb.add_request_handler(LaunchRequestHandler())
+sb.add_request_handler(GetNewFactHandler())
 sb.add_request_handler(SampleIntentHandler())
 sb.add_request_handler(HelloWorldIntentHandler())
 sb.add_request_handler(HelpIntentHandler())
