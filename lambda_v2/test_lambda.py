@@ -1,4 +1,5 @@
-import os
+#Imports
+#import os
 import random
 import logging
 import json
@@ -27,7 +28,7 @@ class LaunchRequestHandler(AbstractRequestHandler):
 
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
-        speak_output = "Welcome to the Green house!"
+        speak_output = "Bienvenido, cómo puedo ayudarte?"
 
         return (
             handler_input.response_builder
@@ -37,6 +38,7 @@ class LaunchRequestHandler(AbstractRequestHandler):
         )
 
 # Built-in Intent Handlers
+
 class GetNewFactHandler(AbstractRequestHandler):
     """Handler for Skill Launch and GetNewFact Intent."""
 
@@ -59,15 +61,15 @@ class GetNewFactHandler(AbstractRequestHandler):
         return handler_input.response_builder.response
 
 
-class HelloWorldIntentHandler(AbstractRequestHandler):
-    """Handler for Hello World Intent."""
+class HelloIntentHandler(AbstractRequestHandler):
+    """Handler for Hello Intent."""
     def can_handle(self, handler_input):
         # type: (HandlerInput) -> bool
-        return ask_utils.is_intent_name("HelloWorldIntent")(handler_input)
+        return ask_utils.is_intent_name("HelloIntent")(handler_input)
 
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
-        speak_output = "Que pasa fiera!"
+        speak_output = "Buenos dias, bienvenido a la Casa Verde!"
 
         return (
             handler_input.response_builder
@@ -76,9 +78,9 @@ class HelloWorldIntentHandler(AbstractRequestHandler):
                 .response
         )
 
-
+"""
 class SampleIntentHandler(AbstractRequestHandler):
-    """Handler for Sample Intent."""
+    #Handler for Sample Intent.
     def can_handle(self, handler_input):
         # type: (HandlerInput) -> bool
         return ask_utils.is_intent_name("SampleIntent")(handler_input)
@@ -100,7 +102,7 @@ class SampleIntentHandler(AbstractRequestHandler):
                 # .ask("add a reprompt if you want to keep the session open for the user to respond")
                 .response
         )
-
+"""
 
 class HelpIntentHandler(AbstractRequestHandler):
     """Handler for Help Intent."""
@@ -197,23 +199,65 @@ class CatchAllExceptionHandler(AbstractExceptionHandler):
                 .response
         )
 
+class LocalizationInterceptor(AbstractRequestInterceptor):
+    """
+    Add function to request attributes, that can load locale specific data.
+    """
+
+    def process(self, handler_input):
+        locale = handler_input.request_envelope.request.locale
+        logger.info("Locale is {}".format(locale[:2]))
+
+        # localized strings stored in language_strings.json
+        with open("language_strings.json") as language_prompts:
+            language_data = json.load(language_prompts)
+        # set default translation data to broader translation
+        data = language_data[locale[:2]]
+        # if a more specialized translation exists, then select it instead
+        # example: "fr-CA" will pick "fr" translations first, but if "fr-CA" translation exists,
+        #          then pick that instead
+        if locale in language_data:
+            data.update(language_data[locale])
+        handler_input.attributes_manager.request_attributes["_"] = data
+
+# Request and Response loggers
+class RequestLogger(AbstractRequestInterceptor):
+    """Log the alexa requests."""
+
+    def process(self, handler_input):
+        # type: (HandlerInput) -> None
+        logger.debug("Alexa Request: {}".format(
+            handler_input.request_envelope.request))
+
+
+class ResponseLogger(AbstractResponseInterceptor):
+    """Log the alexa responses."""
+
+    def process(self, handler_input, response):
+        # type: (HandlerInput, Response) -> None
+        logger.debug("Alexa Response: {}".format(response))
+
 # The SkillBuilder object acts as the entry point for your skill, routing all request and response
 # payloads to the handlers above. Make sure any new handlers or interceptors you've
 # defined are included below. The order matters - they're processed top to bottom.
-
-
 sb = SkillBuilder()
 
-
+#Register intent handlers
 sb.add_request_handler(LaunchRequestHandler())
 sb.add_request_handler(GetNewFactHandler())
-sb.add_request_handler(SampleIntentHandler())
-sb.add_request_handler(HelloWorldIntentHandler())
+#sb.add_request_handler(SampleIntentHandler())
+sb.add_request_handler(HelloIntentHandler())
 sb.add_request_handler(HelpIntentHandler())
 sb.add_request_handler(CancelOrStopIntentHandler())
 sb.add_request_handler(SessionEndedRequestHandler())
 sb.add_request_handler(IntentReflectorHandler()) # make sure IntentReflectorHandler is last so it doesn't override your custom intent handlers
 
+#Register xception handlers
 sb.add_exception_handler(CatchAllExceptionHandler())
+
+# Register request and response interceptors
+sb.add_global_request_interceptor(LocalizationInterceptor())
+sb.add_global_request_interceptor(RequestLogger())
+sb.add_global_response_interceptor(ResponseLogger())
 
 lambda_handler = sb.lambda_handler()
