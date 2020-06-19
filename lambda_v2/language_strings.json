@@ -1,21 +1,15 @@
 {
 	"en": {
 		"SKILL_NAME": "Green House",
-		"GET_FACT_MESSAGE": "Here's your green fact: {}",
+		"GET_FACT_MESSAGE": "Here's your green fact about {}: {}",
 		"HELP_MESSAGE": "You can say tell me a green fact, or, you can say stop... What can I help you with?",
 		"HELP_REPROMPT": "What can I help you with?",
 		"FALLBACK_MESSAGE": "The Green House skill can't help you with that.  It can help you discover eco facts if you say tell me an eco or a green fact. What can I help you with?",
 		"FALLBACK_REPROMPT": "What can I help you with?",
 		"ERROR_MESSAGE": "Sorry, an error occurred.",
 		"STOP_MESSAGE": "Goodbye!",
-		"FACTS": [
-			"Syntetic fibers release microplastics to the environment",
-			"Only two percent of the materials are actually recycled, zero waste will always be the objective",
-			"It is not about being one hundread zero waste, it is about creating sustainable habits every day",
-			"Toothbrush cannot be recycled. A bamboo one is a cleaner choice",
-			"Standard sponges are made out of plastic fibers. Consider buying a sea or vegetal sponge",
-			"If you consume any nutricional supplements, you can use an old jar as a mixer. Shake it!"
-		]
+		"FACTS": {"House":["Do not use the dishwasher","Try to keep the AC off","Do not turn the lights on unless it is needed"],
+            "Food":["Avoid processed food","Fact_b","Fact_c"]}
 	},
 	"en-AU": {
 		"SKILL_NAME": "Australian Space Facts"
@@ -31,20 +25,15 @@
 	},
 	"es": {
 		"SKILL_NAME": "Curiosidades del Espacio",
-		"GET_FACT_MESSAGE": "Aquí está tu curiosidad: {}",
+		"GET_FACT_MESSAGE": "Aquí está tu curiosidad sobre {}: {}",
 		"HELP_MESSAGE": "Puedes decir dime una curiosidad del espacio o puedes decir salir... Cómo te puedo ayudar?",
 		"HELP_REPROMPT": "Como te puedo ayudar?",
 		"FALLBACK_MESSAGE": "La skill Curiosidades del Espacio no te puede ayudar con eso.  Te puede ayudar a descubrir curiosidades sobre el espacio si dices dime una curiosidad del espacio. Como te puedo ayudar?",
 		"FALLBACK_REPROMPT": "Como te puedo ayudar?",
 		"ERROR_MESSAGE": "Lo sentimos, se ha producido un error.",
 		"STOP_MESSAGE": "Adiós!",
-		"FACTS": [
-			"Un año en Mercurio es de solo 88 días",
-			"A pesar de estar más lejos del Sol, Venus tiene temperaturas más altas que Mercurio",
-			"En Marte el sol se ve la mitad de grande que en la Tierra",
-			"Jupiter tiene el día más corto de todos los planetas",
-			"El sol es una esféra casi perfecta"
-		]
+		"FACTS": {"casa":["Evita usar el lavavajillas","Intenta no usar el aire acondicionado","No enciendas las luces a menos que sea necesario"],
+            "comida":["Evita los procesados","Otro","Otro"]}
 	},
 	"es-ES": {
 		"SKILL_NAME": "Curiosidades del Espacio para España"

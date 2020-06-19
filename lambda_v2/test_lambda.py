@@ -4,6 +4,7 @@ import random
 import logging
 import json
 import prompts
+import my_functions as mf
 
 import ask_sdk_core.utils as ask_utils
 
@@ -27,7 +28,7 @@ class LaunchRequestHandler(AbstractRequestHandler):
         return ask_utils.is_request_type("LaunchRequest")(handler_input)
 
     def handle(self, handler_input):
-        # type: (HandlerInput) -> Response
+        # type: (HandlerInput) -> Responsejam
         speak_output = "Bienvenido, cómo puedo ayudarte?"
 
         return (
@@ -38,7 +39,6 @@ class LaunchRequestHandler(AbstractRequestHandler):
         )
 
 # Built-in Intent Handlers
-
 class GetNewFactHandler(AbstractRequestHandler):
     """Handler for Skill Launch and GetNewFact Intent."""
 
@@ -53,12 +53,58 @@ class GetNewFactHandler(AbstractRequestHandler):
         # get localization data
         data = handler_input.attributes_manager.request_attributes["_"]
 
-        random_fact = random.choice(data[prompts.FACTS])
-        speech = data[prompts.GET_FACT_MESSAGE].format(random_fact)
+        #random_fact = random.choice(data[prompts.FACTS])
+        facts = data[prompts.FACTS]
+        categories = [c for c in facts.keys()]
+
+        random_topic = random.choice(categories)
+        random_fact = random.choice(data[prompts.FACTS][random_topic])
+
+        speech = data[prompts.GET_FACT_MESSAGE].format(random_topic,random_fact)
 
         handler_input.response_builder.speak(speech).set_card(
             SimpleCard(data[prompts.SKILL_NAME], random_fact))
         return handler_input.response_builder.response
+
+class GetCategoryFactHandler(AbstractRequestHandler):
+    """Handler for Skill Launch and GetNewFact Intent."""
+
+    def can_handle(self, handler_input):
+        # type: (HandlerInput) -> bool
+        return ask_utils.is_intent_name("GetCategoryFactIntent")(handler_input)
+
+    def handle(self, handler_input):
+        # type: (HandlerInput) -> Response
+        logger.info("In GetCategoryFactHandler")
+
+        # get localization data
+        data = handler_input.attributes_manager.request_attributes["_"]
+
+        facts = data[prompts.FACTS]
+        categories = [c for c in facts.keys()]
+
+        fact_category = mf.get_resolved_value(
+        handler_input.request_envelope.request, 'factCategory')
+        #fact_category = 'casa'
+
+        logger.info("FACT CATEGORY = {}".format(fact_category))
+
+        if fact_category in categories:
+            random_fact = random.choice(data[prompts.FACTS][fact_category])
+            speech = data[prompts.GET_FACT_MESSAGE].format(fact_category,random_fact)
+
+            handler_input.response_builder.speak(speech).set_card(
+            SimpleCard(data[prompts.SKILL_NAME], random_fact))
+            return handler_input.response_builder.response
+
+        else:
+            random_topic = random.choice(categories)
+            random_fact = random.choice(data[prompts.FACTS][random_topic])
+            speech = data[prompts.GET_FACT_MESSAGE].format(random_topic, random_fact)
+
+            handler_input.response_builder.speak(speech).set_card(
+            SimpleCard(data[prompts.SKILL_NAME], random_fact))
+            return handler_input.response_builder.response
 
 
 class HelloIntentHandler(AbstractRequestHandler):
@@ -78,34 +124,106 @@ class HelloIntentHandler(AbstractRequestHandler):
                 .response
         )
 
-"""
-class SampleIntentHandler(AbstractRequestHandler):
-    #Handler for Sample Intent.
+class YesHandler(AbstractRequestHandler):
+    """If the user says Yes, they want another fact."""
     def can_handle(self, handler_input):
         # type: (HandlerInput) -> bool
-        return ask_utils.is_intent_name("SampleIntent")(handler_input)
+        return is_intent_name("YesIntent")(handler_input)
 
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
-        #attr = handler_input.attributes_manager.session_attributes
-        #day = attr["day"]
-        attr = handler_input.attributes_manager.session_attributes
-        attr["state"] = "QUIZ"
-        day = attr["state"]
-        #slots = handler_input.request_envelope.request.intent.slots
-        #day = slots["day"]
-        speak_output = "Up and running with the number "+day+"!"
+        logger.info("In YesHandler")
+        return GetNewFactHandler().handle(handler_input)
 
-        return (
-            handler_input.response_builder
-                .speak(speak_output)
-                # .ask("add a reprompt if you want to keep the session open for the user to respond")
-                .response
-        )
-"""
+class NoHandler(AbstractRequestHandler):
+    """If the user says No, then the skill should be exited."""
+    def can_handle(self, handler_input):
+        # type: (HandlerInput) -> bool
+        return is_intent_name("NoIntent")(handler_input)
+
+    def handle(self, handler_input):
+        # type: (HandlerInput) -> Response
+        logger.info("In NoHandler")
+
+        return handler_input.response_builder.speak(
+            mf.get_random_goodbye()).set_should_end_session(True).response
+
+class GetCategoryFactHandlerOther(AbstractRequestHandler):
+    """
+    Handler for providing category specific facts to the user.
+    The handler provides a random fact specific to the category provided
+    by the user. If there is no such category,
+    then a custom message to choose valid categories is provided, rather
+    than throwing an error.
+    """
+
+    def can_handle(self, handler_input):
+        # type: (HandlerInput) -> bool
+        return is_intent_name("GetCategoryFactIntent_")(handler_input)
+
+    def handle(self, handler_input):
+        # type: (HandlerInput) -> Response
+        logger.info("In GetCategoryFactHandler")
+
+        fact_category = get_resolved_value(
+            handler_input.request_envelope.request, 'factCategory')
+        logger.info("FACT CATEGORY = {}".format(fact_category))
+
+        category_facts = [l for l in all_facts if l.get("type") == fact_category]
+
+        if not category_facts:
+            slot_value = get_spoken_value(
+                handler_input.request_envelope.request, "factCategory")
+            if slot_value is not None:
+                speak_prefix = "I heard you said {}.".format(slot_value)
+            else:
+                speak_prefix = ""
+            speech = (
+                "{} I don't have facts for that category.  You can ask for "
+                "A, B or C.  Which one would you "
+                "like?".format(speak_prefix))
+            reprompt = (
+                "Which fact category would you like?")
+            return handler_input.response_builder.speak(speech).ask(
+                reprompt).response
+        else:
+            in_skill_response = in_skill_product_response(handler_input)
+            if in_skill_response:
+                subscription = [
+                    l for l in in_skill_response.in_skill_products
+                    if l.reference_name == "all_access"]
+                category_product = [
+                    l for l in in_skill_response.in_skill_products
+                    if l.reference_name == "{}_pack".format(fact_category)]
+
+                if is_entitled(subscription) or is_entitled(category_product):
+                    speech = "Here's your {} fact: {} {}".format(
+                        fact_category, get_random_from_list(category_facts),
+                        get_random_yes_no_question())
+                    reprompt = get_random_yes_no_question()
+                    return handler_input.response_builder.speak(speech).ask(
+                        reprompt).response
+                else:
+                    upsell_msg = (
+                        "You don't currently own the {} pack. {} "
+                        "Want to learn more?").format(
+                        fact_category, category_product[0].summary)
+                    return handler_input.response_builder.add_directive(
+                        SendRequestDirective(
+                            name="Upsell",
+                            payload={
+                                "InSkillProduct": {
+                                    "productId": category_product[0].product_id,
+                                },
+                                "upsellMessage": upsell_msg,
+                            },
+                            token="correlationToken")
+                    ).response
+
+
 
 class HelpIntentHandler(AbstractRequestHandler):
-    """Handler for Help Intent."""
+    #Handler for Help Intent.
     def can_handle(self, handler_input):
         # type: (HandlerInput) -> bool
         return ask_utils.is_intent_name("AMAZON.HelpIntent")(handler_input)
@@ -245,6 +363,9 @@ sb = SkillBuilder()
 #Register intent handlers
 sb.add_request_handler(LaunchRequestHandler())
 sb.add_request_handler(GetNewFactHandler())
+sb.add_request_handler(GetCategoryFactHandler())
+sb.add_request_handler(YesHandler())
+sb.add_request_handler(NoHandler())
 #sb.add_request_handler(SampleIntentHandler())
 sb.add_request_handler(HelloIntentHandler())
 sb.add_request_handler(HelpIntentHandler())
