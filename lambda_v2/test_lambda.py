@@ -21,6 +21,24 @@ logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
 
+class TestHandler(AbstractRequestHandler):
+    """Handler for Skill Launch."""
+    def can_handle(self, handler_input):
+        # type: (HandlerInput) -> bool
+        return ask_utils.is_intent_name("TestIntent")(handler_input)
+
+    def handle(self, handler_input):
+        # type: (HandlerInput) -> Responsejam
+        speak_output = "TEST ANSWER"
+
+        return (
+            handler_input.response_builder
+                .speak(speak_output)
+                .ask("hola?")
+                .response
+        )
+
+
 class LaunchRequestHandler(AbstractRequestHandler):
     """Handler for Skill Launch."""
     def can_handle(self, handler_input):
@@ -34,7 +52,6 @@ class LaunchRequestHandler(AbstractRequestHandler):
         return (
             handler_input.response_builder
                 .speak(speak_output)
-                .ask(speak_output)
                 .response
         )
 
@@ -61,9 +78,11 @@ class GetNewFactHandler(AbstractRequestHandler):
         random_fact = random.choice(data[prompts.FACTS][random_topic])
 
         speech = data[prompts.GET_FACT_MESSAGE].format(random_topic,random_fact)
+        #reprompt = mf.get_random_yes_no_question()
 
         handler_input.response_builder.speak(speech).set_card(
             SimpleCard(data[prompts.SKILL_NAME], random_fact))
+
         return handler_input.response_builder.response
 
 class GetCategoryFactHandler(AbstractRequestHandler):
@@ -83,9 +102,8 @@ class GetCategoryFactHandler(AbstractRequestHandler):
         facts = data[prompts.FACTS]
         categories = [c for c in facts.keys()]
 
-        fact_category = mf.get_resolved_value(
-        handler_input.request_envelope.request, 'factCategory')
-        #fact_category = 'casa'
+        fact_category = mf.get_category_value(
+        handler_input.request_envelope.request, 'category')
 
         logger.info("FACT CATEGORY = {}".format(fact_category))
 
@@ -120,15 +138,16 @@ class HelloIntentHandler(AbstractRequestHandler):
         return (
             handler_input.response_builder
                 .speak(speak_output)
-                # .ask("add a reprompt if you want to keep the session open for the user to respond")
                 .response
+                # .ask("add a reprompt if you want to keep the session open for the user to respond")
+                #.response
         )
 
 class YesHandler(AbstractRequestHandler):
     """If the user says Yes, they want another fact."""
     def can_handle(self, handler_input):
         # type: (HandlerInput) -> bool
-        return is_intent_name("YesIntent")(handler_input)
+        return ask_utils.is_intent_name("YesIntent")(handler_input)
 
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
@@ -139,14 +158,14 @@ class NoHandler(AbstractRequestHandler):
     """If the user says No, then the skill should be exited."""
     def can_handle(self, handler_input):
         # type: (HandlerInput) -> bool
-        return is_intent_name("NoIntent")(handler_input)
+        return ask_utils.is_intent_name("NoIntent")(handler_input)
 
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
         logger.info("In NoHandler")
+        goodbye = mf.get_random_goodbye()
 
-        return handler_input.response_builder.speak(
-            mf.get_random_goodbye()).set_should_end_session(True).response
+        return handler_input.response_builder.speak(goodbye).set_should_end_session(True).response
 
 class GetCategoryFactHandlerOther(AbstractRequestHandler):
     """
@@ -219,7 +238,6 @@ class GetCategoryFactHandlerOther(AbstractRequestHandler):
                             },
                             token="correlationToken")
                     ).response
-
 
 
 class HelpIntentHandler(AbstractRequestHandler):
@@ -362,12 +380,14 @@ sb = SkillBuilder()
 
 #Register intent handlers
 sb.add_request_handler(LaunchRequestHandler())
+sb.add_request_handler(TestHandler())
 sb.add_request_handler(GetNewFactHandler())
 sb.add_request_handler(GetCategoryFactHandler())
 sb.add_request_handler(YesHandler())
 sb.add_request_handler(NoHandler())
-#sb.add_request_handler(SampleIntentHandler())
 sb.add_request_handler(HelloIntentHandler())
+
+#Other Handlers
 sb.add_request_handler(HelpIntentHandler())
 sb.add_request_handler(CancelOrStopIntentHandler())
 sb.add_request_handler(SessionEndedRequestHandler())

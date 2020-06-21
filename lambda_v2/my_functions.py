@@ -1,8 +1,13 @@
-def get_resolved_value(request, slot_name):
+#Imports
+import random
+
+#Definition of the funtion:
+def get_category_value(request, slot_name):
     """Resolve the slot name from the request using resolutions."""
     # type: (IntentRequest, str) -> Union[str, None]
     try:
-        return (request.intent.slots[slot_name].value)
+        return (request.intent.slots[slot_name].resolutions.
+                resolutions_per_authority[0].values[0].value.name)
     except (AttributeError, ValueError, KeyError, IndexError):
         return None
 
@@ -13,13 +18,6 @@ def get_spoken_value(request, slot_name):
         return request.intent.slots[slot_name].value
     except (AttributeError, ValueError, KeyError, IndexError):
         return None
-
-def in_skill_product_response(handler_input):
-    """Get the In-skill product response from monetization service."""
-    # type: (HandlerInput) -> Union[InSkillProductsResponse, Error]
-    locale = handler_input.request_envelope.request.locale
-    ms = handler_input.service_client_factory.get_monetization_service()
-    return ms.get_in_skill_products(locale)
 
 def get_random_yes_no_question():
     """Return random question for YES/NO answering."""
