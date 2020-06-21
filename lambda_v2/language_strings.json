@@ -55,8 +55,31 @@
 		"FALLBACK_REPROMPT": "Como te puedo ayudar?",
 		"ERROR_MESSAGE": "Lo sentimos, se ha producido un error.",
 		"STOP_MESSAGE": "Adiós!",
-		"FACTS": {"casa":["Evita usar el lavavajillas","Intenta no usar el aire acondicionado","No enciendas las luces a menos que sea necesario"],
-            "comida":["Evita los procesados","Otro","Otro"]}
+		"FACTS": {
+			"Casa": ["Recicle tanto como sea posible, infórmese sobre cómo desechar los desechos de sus autoridades locales", "Limpie sus superficies con agua y vinagre, ¡prometo que no huele!", "Compre terracota, no plástico, macetas para sus plantas "," Nunca deseche el aceite de cocina usado en el fregadero "," Excepto el papel higiénico usado, no tire la basura en el inodoro ",
+			"Evite usar papel de cocina, en lugar de eso, vaya por paños", "Reemplace las bombillas eléctricas con bombillas fluorescentes compactas"
+			],
+		    	"Alimentos": ["Evite los alimentos procesados", "Intente reemplazar las proteínas de origen animal por proteínas vegetales", "Evite las carnes rojas, las aves de corral producen menos emisiones", "Evite los peces grandes como el atún o el pez espada, contienen grandes cantidades de mercurio y otros metales ",
+			"Evite comer más alimentos de los necesarios, considere descargar una aplicación para controlarla", "Compre productos de temporada local. Para llegar al mercado ha habido menos emisiones de dioxinas de carbono y han recorrido una distancia menor"
+			],
+			"Compras": ["Evite el agua embotellada si el agua del grifo local es potable", "No compre herramientas de plástico para la cocina, sino hierro o madera", "Considere comprar ropa en tiendas de segunda mano", "Evite la ropa hecha con fibras sintéticas, ¡el algodón es la mejor opción! "," Calcule y reduzca la cantidad de ropa que compra anualmente ",
+			"Considere evitar un pequeño gasto mensual para que pueda invertirlo en una organización benéfica ambiental", "Apoye a su tienda orgánica local. Como no cuentan con economías de escala, será más costoso. Sin embargo, apoyará su desarrollo".
+			"Cuide su teléfono inteligente. Considere restaurarlo al modo de fábrica y evite que se caiga", "Considere usar barras de jabón en lugar de gel de baño contenido en una botella de plástico", "Donde sea que esté, no compre productos hechos de especies en peligro de extinción". como marfil, carey, piel de lagarto, abrigos de piel y productos alimenticios hechos de animales o plantas en peligro de extinción "
+			"Durante su estadía en un hotel, debe notificárselos para no cambiar las sábanas y las toallas a diario. De esta manera contribuirá en gran medida al ahorro de agua"
+			],
+			"Transporte": ["Las opciones de transporte público y uso compartido de vehículos siempre deben ser la primera opción", "Si es posible, viaje en tren en lugar de automóvil y avión", "Durante sus vacaciones, considere viajar a algún lugar que no requiera un avión para llegar allí "," Comienza un plan de ahorro para que el próximo auto que compres sea híbrido o eléctrico "," Si te gustan las motocicletas, considera comprar uno eléctrico ",
+			"Al conducir, mantenga su vehículo a una velocidad constante para ahorrar combustible", "En su automóvil, busque neumáticos diseñados para ahorrar combustible o reducir el ruido", "Trate de mantener al mínimo la conducción fuera de la carretera: perturba el medio ambiente natural y tiene importantes consecuencias sobre el terreno "
+			],
+			"Espacio de trabajo": ["Para sus propias notas, use un lápiz en lugar de un bolígrafo", "Apague la computadora y las pantallas del monitor cuando vaya a casa", "Considere ir a trabajar con una bicicleta, compartir su automóvil o usar el transporte público "," Traiga su propia comida al trabajo, la mayoría de los restaurantes y bares alrededor de las oficinas generan muchos desechos no reciclables ",
+			"Evite usar artículos simples de plástico como tazas y ropa de plata, considere traerlos de casa", "Considere trabajar desde casa siempre que sea posible"
+			],
+			"Energía": ["Apague su teléfono por la noche, utilíceme como su despertador", "Evite usar el lavavajillas", "Intente mantener el aire acondicionado apagado", "Apague las luces cuando salga de una habitación", "En invierno, use ropa abrigada en casa para evitar usar el calentador", "Use un cepillo en lugar de una aspiradora", "Reemplace su entretenimiento de TV por libros o chatee con otros miembros de la casa",
+			"Apague el horno y la estufa antes de terminar de cocinar para usar el calor residual"
+			],
+			"Sociedad": ["¡Trata de convencer a tu familia y amigos de que sigan estos consejos ecológicos, principalmente a los niños!", "Recuerda que no se trata de hacer todo perfecto y rápido, sino de ser coherente y consciente de tu impacto", " Vota por políticos que apoyen programas sostenibles ",
+			"¿Un buen plan para el fin de semana? ¡Ve al parque, la playa o la montaña más cercanos y haz una limpieza con tus amigos! También puedes unirte a una organización benéfica que organiza este tipo de actividades", "¿Alguna vez has hecho Plogging? mientras limpias la basura que encuentras "," Considera descargar ecosia como navegador web y de teléfono. Algunas de las ganancias se destinarán a plantar árboles "
+			"Nunca arroje cigarrillos al mar. Un filtro tarda de 1 a 5 años en degradarse. Puede ser comido por aves marinas, peces y mamíferos marinos con trágicas consecuencias"]
+			 }
 	},
 	"es-ES": {
 		"SKILL_NAME": "Curiosidades del Espacio para España"
@@ -176,12 +199,30 @@
 		"FALLBACK_REPROMPT": "Wie kann ich dir helfen?",
 		"ERROR_MESSAGE": "Es ist ein Fehler aufgetreten.",
 		"STOP_MESSAGE": "Auf Wiedersehen!",
-		"FACTS": [
-			"Ein Jahr dauert auf dem Merkur nur 88 Tage.",
-			"Die Venus ist zwar weiter von der Sonne entfernt, hat aber höhere Temperaturen als Merkur.",
-			"Venus dreht sich entgegen dem Uhrzeigersinn, möglicherweise aufgrund eines früheren Zusammenstoßes mit einem Asteroiden.",
-			"Auf dem Mars erscheint die Sonne nur halb so groß wie auf der Erde.",
-			"Jupiter hat den kürzesten Tag aller Planeten."
-		]
+		"FACTS": {
+			"Haus": ["Bitte recyceln Sie so viel wie möglich, informieren Sie sich darüber, wie Sie Abfälle von Ihren örtlichen Behörden entsorgen können", "Reinigen Sie Ihre Oberflächen mit Wasser und Essig, ich verspreche, es riecht nicht!", "Kaufen Sie Terrakota, nicht Plastik, Töpfe für Ihre Pflanzen "," Entsorgen Sie niemals gebrauchtes Speiseöl in der Spüle "," Entsorgen Sie außer gebrauchtem Toilettenpapier keinen Müll in der Toilette ",
+			"Vermeiden Sie Küchenpapier, sondern Waschlappen", "Ersetzen Sie Glühbirnen durch Kompaktleuchtstofflampen"
+			],
+				    "Lebensmittel": ["Vermeiden Sie verarbeitete Lebensmittel", "Versuchen Sie, Ihr tierisches Protein durch pflanzliches Protein zu ersetzen", "Vermeiden Sie rotes Fleisch, Geflügel verursacht weniger Emissionen", "Vermeiden Sie große Fische wie Thunfisch oder Schwertfisch, sie enthalten größere Mengen Quecksilber und andere Metalle ",
+			"Vermeiden Sie es, mehr Lebensmittel als nötig zu essen, und laden Sie eine App herunter, um sie zu kontrollieren", "Kaufen Sie Produkte der lokalen Saison. Um den Markt zu erreichen, wurden weniger Kohlendioxidemissionen verursacht und sie haben eine geringere Strecke zurückgelegt."
+			],
+			"Einkaufen": ["Vermeiden Sie Wasser in Flaschen, wenn das lokale Leitungswasser trinkbar ist", "Kaufen Sie keine Plastikwerkzeuge für die Küche, sondern Eisen- oder Holzwerkzeuge", "Erwägen Sie den Kauf von Kleidung in Secondhand-Läden", "Vermeiden Sie Kleidung aus Baumwolle ist die beste Wahl! "," Berechnen und reduzieren Sie die Menge an Kleidung, die Sie jährlich kaufen ",
+			"Vermeiden Sie kleine monatliche Ausgaben, damit Sie sie in eine Umweltschutzorganisation investieren können", "Unterstützen Sie Ihr lokales Bio-Geschäft. Da sie nicht mit Skaleneffekten rechnen, wird es teurer. Sie werden jedoch ihre Entwicklung unterstützen."
+			"Kümmern Sie sich um Ihr Smartphone. Stellen Sie es in den Werksmodus zurück und verhindern Sie, dass es herunterfällt.", "Verwenden Sie Seifenstücke anstelle von Körperwäsche in einer Plastikflasche.", "Kaufen Sie überall keine Produkte aus gefährdeten Arten wie Elfenbein, Schildpatt, Echsenhaut, Pelzmäntel und Lebensmittelprodukte aus gefährdeten Tieren oder Pflanzen "
+			"Während Ihres Aufenthalts in einem Hotel sollten Sie diese benachrichtigen, um die Bettwäsche und Handtücher nicht täglich zu wechseln. Auf diese Weise tragen Sie viel zur Wassereinsparung bei."
+			],
+			"Transport": ["Öffentliche Verkehrsmittel und gemeinsame Nutzung von Fahrzeugen sollten immer die erste Wahl sein", "Wenn möglich, reisen Sie mit dem Zug anstelle von Auto und Flugzeug", "Während Ihres Urlaubs sollten Sie an einen Ort reisen, für den kein Flugzeug erforderlich ist dort "," Starten Sie einen Sparplan, damit das nächste Auto, das Sie kaufen, Hybrid oder Elektro ist "," Wenn Sie Motorräder mögen, sollten Sie ein elektrisches kaufen ",
+			"Halten Sie Ihr Fahrzeug während der Fahrt auf einer konstanten Geschwindigkeit, um Kraftstoff zu sparen", "Verwenden Sie in Ihrem Auto Reifen, die für Kraftstoffeinsparung oder Geräuschreduzierung ausgelegt sind", "Versuchen Sie, das Fahren im Gelände auf ein Minimum zu beschränken - dies stört die natürliche Umgebung und hat wichtige Konsequenzen vor Ort "
+			],
+			"Arbeitsbereich": ["Verwenden Sie für Ihre eigenen Notizen einen Bleistift anstelle eines Stiftes", "Schalten Sie Ihren Computer aus und überwachen Sie die Bildschirme, wenn Sie nach Hause gehen", "Überlegen Sie, ob Sie mit dem Fahrrad arbeiten, Ihr Auto teilen oder öffentliche Verkehrsmittel nutzen möchten "," Bringen Sie Ihr eigenes Essen zur Arbeit, die meisten Restaurants und Bars in den Büros verursachen viel nicht recycelbaren Abfall ",
+			"Vermeiden Sie die Verwendung eines einfachen Plastikartikels wie Tassen und Silberkleidung. Bringen Sie diese von zu Hause mit.", "Arbeiten Sie von zu Hause aus, wann immer dies möglich ist."
+			],
+			"Energie": ["Schalten Sie Ihr Telefon nachts aus, verwenden Sie mich als Wecker!", "Vermeiden Sie die Verwendung des Geschirrspülers", "Versuchen Sie, die Klimaanlage auszuschalten", "Schalten Sie das Licht aus, wenn Sie einen Raum verlassen", "Tragen Sie im Winter zu Hause warme Kleidung, um die Verwendung der Heizung zu vermeiden", "Verwenden Sie eine Bürste anstelle eines Staubsaugers", "Ersetzen Sie Ihre Fernsehunterhaltung durch Bücher oder unterhalten Sie sich mit anderen Mitgliedern des Hauses",
+			"Schalten Sie den Ofen und den Herd aus, bevor Sie mit dem Kochen fertig sind, um die Restwärme zu nutzen."
+			],
+			"Gesellschaft": ["Versuchen Sie, Ihre Familie und Freunde davon zu überzeugen, diese Öko-Tipps zu befolgen, vor allem für die Kinder!", "Denken Sie daran, dass es nicht darum geht, alles perfekt und schnell zu machen, sondern konsequent und bewusst über Ihre Auswirkungen zu sein", " Stimmen Sie für Politiker, die nachhaltige Programme unterstützen ",
+			"Ein guter Plan für das Wochenende? Gehen Sie zum nächsten Park, Strand oder Berg und räumen Sie mit Ihren Freunden auf! Sie können sich auch einer Wohltätigkeitsorganisation anschließen, die diese Art von Aktivitäten organisiert", "Haben Sie jemals Ploggen gemacht? Es geht joggen Während Sie den gefundenen Müll säubern! "," Laden Sie ecosia als Ihren Web- und Telefonbrowser herunter. Ein Teil der Gewinne fließt in das Pflanzen von Bäumen. "
+			"Entsorgen Sie Zigaretten niemals auf dem Meer. Der Abbau eines Filters dauert 1 bis 5 Jahre. Er kann von Seevögeln, Fischen und Meeressäugern mit tragischen Folgen gefressen werden."]
+		}
 	}
 }
