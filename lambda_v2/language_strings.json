@@ -9,18 +9,29 @@
 		"ERROR_MESSAGE": "Sorry, an error occurred.",
 		"STOP_MESSAGE": "Goodbye!",
 		"FACTS": {
-			"House":[ "Please recycle as much as possible, get informed on how to recycle any disposable waste from your local authorities","Clean your surfaces with water and vinegar, I promise it does not smell!","Buy terracota, not plastic, pots for your plants","Never dispose used cooking oil in the sink","Except from used toilet paper, do not dispose trash in the toilet",
-				 "Avoid using kitchen paper, instead go for washcloths",""],
+			"House":[ "Please recycle as much as possible, get informed on how to dispose any waste from your local authorities","Clean your surfaces with water and vinegar, I promise it does not smell!","Buy terracota, not plastic, pots for your plants","Never dispose used cooking oil in the sink","Except from used toilet paper, do not dispose trash in the toilet",
+				 "Avoid using kitchen paper, instead go for washcloths","Replace electrical bulbs with compact fluorescent light bulbs"
+				],
             		"Food":["Avoid processed food","Try replacing your animal sourced protein by plant based protein","Avoid red meat, poultry produces less emissions","Avoid big fishes like tuna or Swordfish, they contain bigger amounts of mercury and other metals",
-				"Avoid eating more food than necessary, consider downloading an app to control it",],
+				"Avoid eating more food than necessary, consider downloading an app to control it","Buy local season products. In order to reach the market there have been fewer carbon dioxin emissions and they have traveled a smaller distance"
+			       ],
 			"Shopping":["Avoid bottled water if the local tap water is drinkable","Do not buy plastic tools for the kitchen, but rather iron or wooden ones","Consider buying clothes from thrift stores","Avoid clothes made with sintetic fibers, cotton is the best choice!","Calculate and reduce the amount of clothes you buy anually",
-				"Consider avoiding a small monthly expense so you can invest it in an environmental charity"],
+				"Consider avoiding a small monthly expense so you can invest it in an environmental charity","Support your local organic store. As they do not count with economies of scale, it will be more expensive. However, you will support their development"
+				"Take care of your smartphone. Consider restoring it to factory mode and prevent it from falling","Consider using soap bars instead of bodywash contained in a plastic bottle", "Wherever you're, don't buy products made of endangered species such as ivory, Tortoiseshell, lizard skin, fur coats and food products made of animals or plants that are endangered" 
+				 "During your stay in a hotel, you should notify them in order not to change the sheets and towels on a daily basis. This way you contribute a great deal in water saving"  
+				   ],
 			"Transportation":["Public transportation and vehicle sharing options should always be the first choice","If possible, travel by train instead of car and plane","During your vacations, consider traveling somewhere that does not require a plane to get there","Start a savings plan so the next car you buy is hybrid or electric","If you like motorcycles, consider buying an electric one",
-				"When driving, keep your vehicle at a steady speed to save fuel",""],
+				"When driving, keep your vehicle at a steady speed to save fuel", "In your car, go for tires designed for fuel saving or noise reduction","Try to keep to a minimum driving off-road - it disturbs the natural environment and has important consequences on the ground"
+					 ],
 			"Workspace":["For your own notes, use a pencil instead of a pen","Switch off your computer and monitor screens when you go home","Consider going to work with a bike, sharing your car or using public transportation","Bring your own food to work, most of retaurants and bars around the offices create a lot of non-recyclable waste",
-				    ""],
+				    "Avoid using one simple plastic items such as cups and silverwear, consider bringing those from home","Consider working from home whenever it is possible"
+				    ],
 			"Energy":["Switch off your phone at night, use me as your alarm clock!","Avoid using the dishwasher","Try to keep the AC off","Switch the lights off when you leave a room","In the winter, wear warm clothes at home to avoid using the heater","Use a brush instead of a vacuum","Replace your TV entertainment for books or chatting with other members of the house",
-				 "",]
+				 "Switch off the oven and the stove before you finish cooking to use the residual heat"
+				 ],
+			"Society":["Try to convince your family and friends to follow these eco tips, mostly to the children!","Remember it is not about doing everything perfectly and fast, but about being consistent and conscious of your impact","Vote for politicians that support sustainable programs",
+				  "A good plan for the weekend? Go to your nearest park, beach or mountain and do a cleanup with your friends! You can also join a charity that organizes these kind of activities","Have you ever done Plogging? It is going jogging whilst you clean the trash you find!","Consider downloading ecosia as your web and phone browser. Some of the profits will go to plant trees"
+				 "Never dispose cigarettes on the sea. A filter takes 1 to 5 years to degrade. It can be eaten by sea-birds, fish and sea mammals with tragic consequences" ]
 		}
 	},
 	"en-AU": {
