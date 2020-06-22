@@ -1,0 +1,213 @@
+{
+	"en": {
+		"SKILL_NAME": "Green House",
+		"GET_FACT_MESSAGE": "Here's your green fact about {}: {}. {}",
+		"HELP_MESSAGE": "You can say tell me a green fact, or, you can say stop... What can I help you with?",
+		"HELP_REPROMPT": "What can I help you with?",
+		"FALLBACK_MESSAGE": "The Green House skill can't help you with that.  It can help you discover eco facts if you say tell me an eco or a green fact. What can I help you with?",
+		"FALLBACK_REPROMPT": "What can I help you with?",
+		"ERROR_MESSAGE": "Sorry, an error occurred.",
+		"STOP_MESSAGE": "Goodbye!",
+		"ANOTHER_FACT":["Would you like another fact?", "Can I tell you another fact?",
+        "Do you want to hear another fact?"],
+		"FACTS": {
+			"House":[ "Please recycle as much as possible, get informed on how to dispose any waste from your local authorities","Clean your surfaces with water and vinegar, I promise it does not smell!","Buy terracota, not plastic, pots for your plants","Never dispose used cooking oil in the sink","Except from used toilet paper, do not dispose trash in the toilet",
+				 "Avoid using kitchen paper, instead go for washcloths","Replace electrical bulbs with compact fluorescent light bulbs"
+				],
+            		"Food":["Avoid processed food","Try replacing your animal sourced protein by plant based protein","Avoid red meat, poultry produces less emissions","Avoid big fishes like tuna or Swordfish, they contain bigger amounts of mercury and other metals",
+				"Avoid eating more food than necessary, consider downloading an app to control it","Buy local season products. In order to reach the market there have been fewer carbon dioxin emissions and they have traveled a smaller distance"
+			       ],
+			"Shopping":["Avoid bottled water if the local tap water is drinkable","Do not buy plastic tools for the kitchen, but rather iron or wooden ones","Consider buying clothes from thrift stores","Avoid clothes made with sintetic fibers, cotton is the best choice!","Calculate and reduce the amount of clothes you buy anually",
+				"Consider avoiding a small monthly expense so you can invest it in an environmental charity","Support your local organic store. As they do not count with economies of scale, it will be more expensive. However, you will support their development",
+				"Take care of your smartphone. Consider restoring it to factory mode and prevent it from falling","Consider using soap bars instead of bodywash contained in a plastic bottle", "Wherever you're, don't buy products made of endangered species such as ivory, Tortoiseshell, lizard skin, fur coats and food products made of animals or plants that are endangered",
+				 "During your stay in a hotel, you should notify them in order not to change the sheets and towels on a daily basis. This way you contribute a great deal in water saving"
+				   ],
+			"Transportation":["Public transportation and vehicle sharing options should always be the first choice","If possible, travel by train instead of car and plane","During your vacations, consider traveling somewhere that does not require a plane to get there","Start a savings plan so the next car you buy is hybrid or electric","If you like motorcycles, consider buying an electric one",
+				"When driving, keep your vehicle at a steady speed to save fuel", "In your car, go for tires designed for fuel saving or noise reduction","Try to keep to a minimum driving off-road - it disturbs the natural environment and has important consequences on the ground"
+					 ],
+			"Workspace":["For your own notes, use a pencil instead of a pen","Switch off your computer and monitor screens when you go home","Consider going to work with a bike, sharing your car or using public transportation","Bring your own food to work, most of retaurants and bars around the offices create a lot of non-recyclable waste",
+				    "Avoid using one simple plastic items such as cups and silverwear, consider bringing those from home","Consider working from home whenever it is possible"
+				    ],
+			"Energy":["Switch off your phone at night, use me as your alarm clock!","Avoid using the dishwasher","Try to keep the AC off","Switch the lights off when you leave a room","In the winter, wear warm clothes at home to avoid using the heater","Use a brush instead of a vacuum","Replace your TV entertainment for books or chatting with other members of the house",
+				 "Switch off the oven and the stove before you finish cooking to use the residual heat"
+				 ],
+			"Society":["Try to convince your family and friends to follow these eco tips, mostly to the children!","Remember it is not about doing everything perfectly and fast, but about being consistent and conscious of your impact","Vote for politicians that support sustainable programs",
+				  "A good plan for the weekend? Go to your nearest park, beach or mountain and do a cleanup with your friends! You can also join a charity that organizes these kind of activities","Have you ever done Plogging? It is going jogging whilst you clean the trash you find!","Consider downloading ecosia as your web and phone browser. Some of the profits will go to plant trees",
+				 "Never dispose cigarettes on the sea. A filter takes 1 to 5 years to degrade. It can be eaten by sea-birds, fish and sea mammals with tragic consequences" ]
+		}
+	},
+	"es": {
+		"SKILL_NAME": "La casa verde",
+		"GET_FACT_MESSAGE": "Aquí está tu curiosidad sobre {}: {}. {}",
+		"HELP_MESSAGE": "Puedes decir dime una curiosidad del espacio o puedes decir salir... Cómo te puedo ayudar?",
+		"HELP_REPROMPT": "Como te puedo ayudar?",
+		"FALLBACK_MESSAGE": "La skill Curiosidades del Espacio no te puede ayudar con eso.  Te puede ayudar a descubrir curiosidades sobre el espacio si dices dime una curiosidad del espacio. Como te puedo ayudar?",
+		"FALLBACK_REPROMPT": "Como te puedo ayudar?",
+		"ERROR_MESSAGE": "Lo sentimos, se ha producido un error.",
+		"STOP_MESSAGE": "Adiós!",
+		"ANOTHER_FACT":["Quieres otro dato?", "Te cuento otra cosa?",
+				"Quieres otro consejo?"],
+		"FACTS": {
+			"Casa": ["Recicle tanto como sea posible, infórmese sobre cómo desechar los desechos por sus autoridades locales", "Limpie sus superficies con agua y vinagre, ¡prometo que no huele!", "Compre terracota, no plástico, para las macetas","Nunca deseche el aceite de cocina usado en el fregadero","Excepto el papel higiénico usado, no tire  basura en el inodoro",
+			"Evite usar papel de cocina, en lugar de eso, utilice paños", "Reemplace las bombillas eléctricas por bombillas fluorescentes compactas"
+			],
+		    	"Alimentos": ["Evite los alimentos procesados", "Intente reemplazar las proteínas de origen animal por proteínas vegetales","Evite las carnes rojas, las aves de corral producen menos emisiones", "Evite los peces grandes como el atún o el pez espada, contienen grandes cantidades de mercurio y otros metales",
+			"Evite comer más alimentos de los necesarios, considere descargar una aplicación para controlar la ingesta diaria", "Compre productos de temporada local. Para llegar al mercado ha habido menos emisiones de dioxido de carbono y han recorrido una distancia menor"
+			],
+			"Compras": ["Evite el agua embotellada si el agua del grifo es potable", "No compre herramientas de plástico para la cocina, sino hierro o madera", "Considere comprar ropa en tiendas de segunda mano", "Evite la ropa hecha con fibras sintéticas, ¡el algodón es la mejor opción!","Calcule y reduzca la cantidad de ropa que compra anualmente",
+			"Considere evitar un pequeño gasto mensual para que pueda invertirlo en una organización benéfica medioambiental", "Apoye a su tienda orgánica local. Como no cuentan con economías de escala, será más costoso. Sin embargo, apoyará su desarrollo","Cuide su teléfono inteligente. Considere restaurarlo al modo de fábrica y evite que se caiga",
+			"Considere usar barras de jabón en lugar de gel de baño contenido en una botella de plástico", "Donde sea que esté, no compre productos hechos de especies en peligro de extinción como marfil, piel de serpiente o de lagarto, abrigos de piel y productos alimenticios hechos de animales o plantas en peligro de extinción",
+			"Durante su estancia en un hotel, debe notificar al servico para no cambiar las sábanas y las toallas a diario. De esta manera contribuirá en gran medida al ahorro de agua"
+			],
+			"Transporte": ["Las opciones de transporte público y uso compartido de vehículos siempre deben ser la primera opción", "Si es posible, viaje en tren en lugar de automóvil y avión", "Durante sus vacaciones, considere viajar a algún lugar que no requiera un avión para llegar allí","Comienza un plan de ahorro para que el próximo coche que compres sea híbrido o eléctrico","Si te gustan las motocicletas, considera comprar una eléctrica",
+			"Al conducir, mantenga su vehículo a una velocidad constante para ahorrar combustible", "En su automóvil, busque neumáticos diseñados para ahorrar combustible o reducir el ruido", "Trate de mantener al mínimo la conducción fuera de la carretera: perturba el medio ambiente natural y tiene importantes consecuencias sobre el terreno"
+			],
+			"Espacio de trabajo": ["Para sus propias notas, use un lápiz en lugar de un bolígrafo", "Apague el ordenador y las pantallas del monitor cuando vaya a casa", "Considere ir a trabajar con una bicicleta, compartir su automóvil o usar el transporte público para llegar","Traiga su propia comida al trabajo, la mayoría de los restaurantes y bares alrededor de las oficinas generan muchos desechos no reciclables",
+			"Evite usar artículos simples de plástico como tazas y cubiertos, considere traerlos de casa", "Considere trabajar desde casa siempre que sea posible"
+			],
+			"Energía": ["Apague su teléfono por la noche, utilíceme como su despertador", "Evite usar el lavavajillas", "Intente mantener el aire acondicionado apagado", "Apague las luces cuando salga de una habitación", "En invierno, use ropa abrigada en casa para evitar usar el calentador", "Use un cepillo en lugar de una aspiradora", "Reemplace su entretenimiento de television o videojuegos por libros o chatee con otros miembros de la casa",
+			"Apague el horno y la estufa antes de terminar de cocinar para usar el calor residual"
+			],
+			"Sociedad": ["¡Trata de convencer a tu familia y amigos de que sigan estos consejos ecológicos, principalmente a los niños!", "Recuerda que no se trata de hacer todo perfecto y rápido, sino de ser coherente y consciente de tu impacto", "Vota por políticos que apoyen programas sostenibles",
+			"¿Un buen plan para el fin de semana? ¡Ve al parque, la playa o la montaña más cercanos y haz una limpieza con tus amigos! También puedes unirte a una organización benéfica que organiza este tipo de actividades", "¿Alguna vez has hecho Plogging? Es salir a correr mientras limpias la basura que encuentras","Considera descargar ecosia como navegador web y de teléfono. Algunas de las ganancias se destinarán a plantar árboles",
+			"Nunca arroje cigarrillos al mar. Un filtro tarda de 1 a 5 años en degradarse. Puede ser comido por aves marinas, peces y mamíferos marinos con trágicas consecuencias"
+				    ]
+			 }
+	},
+	"fr": {
+		"SKILL_NAME": "Anecdotes de Maison Verte",
+		"GET_FACT_MESSAGE": "Voici votre anecdote sur {}: {}. {}",
+		"HELP_MESSAGE": "Vous pouvez dire donne-moi une anecdote, ou, vous pouvez dire stop... Comment puis-je vous aider?",
+		"HELP_REPROMPT": "Comment puis-je vous aider?",
+		"FALLBACK_MESSAGE": "La skill des anecdotes de l'espace ne peux vous aider avec cela. Je peux vous aider à découvrir des anecdotes sur l'espace si vous dites par exemple, donne-moi une anecdote. Comment puis-je vous aider?",
+		"FALLBACK_REPROMPT": "Comment puis-je vous aider?",
+		"ERROR_MESSAGE": "Désolé, une erreur est survenue.",
+		"STOP_MESSAGE": "Au revoir!",
+		"ANOTHER_FACT":["Would you like another fact?", "Can I tell you another fact?",
+				"Do you want to hear another fact?"],
+		"FACTS": [
+			"Une année sur Mercure ne dure que 88 jours.",
+			"En dépit de son éloignement du Soleil, Vénus connaît des températures plus élevées que sur Mercure.",
+			"Sur Mars, le Soleil apparaît environ deux fois plus petit que sur Terre.",
+			"De toutes les planètes, Jupiter a le jour le plus court.",
+			"Le Soleil est une sphère presque parfaite."
+		]
+	},
+	"hi": {
+		"SKILL_NAME": "अंतरिक्ष facts",
+		"GET_FACT_MESSAGE": "ये लीजिए आपका fact: {}",
+		"HELP_MESSAGE": "आप मुझे नया fact सुनाओ बोल सकते हैं या फिर exit भी बोल सकते हैं... आप क्या करना चाहेंगे?",
+		"HELP_REPROMPT": "मैं आपकी किस प्रकार से सहायता कर सकती हूँ?",
+		"ERROR_MESSAGE": "सॉरी, मैं वो समज नहीं पायी. क्या आप repeat कर सकते हैं?",
+		"STOP_MESSAGE": "अच्छा bye, फिर मिलते हैं",
+		"ANOTHER_FACT":["Would you like another fact?", "Can I tell you another fact?",
+				"Do you want to hear another fact?"],
+		"FACTS": [
+			"बुध गृह में एक साल में केवल अठासी दिन होते हैं",
+			"सूरज से दूर होने के बावजूद, Venus का तापमान Mercury से ज़्यादा होता हैं",
+			"Earth के तुलना से Mars में सूरज का size तक़रीबन आधा हैं",
+			"सारे ग्रहों में Jupiter का दिन सबसे कम हैं",
+			"सूरज का shape एकदम गेंद आकार में हैं"
+		]
+	},
+	"hi-IN": {
+		"SKILL_NAME": "अंतरिक्ष फ़ैक्ट्स"
+	},
+	"it": {
+		"SKILL_NAME": "Aneddoti dallo spazio",
+		"GET_FACT_MESSAGE": "Ecco il tuo aneddoto sulle {}: {}.{}",
+		"HELP_MESSAGE": "Puoi chiedermi un aneddoto dallo spazio o puoi chiudermi dicendo 'esci'... Come posso aiutarti?",
+		"HELP_REPROMPT": "Come posso aiutarti?",
+		"FALLBACK_MESSAGE": "Non posso aiutarti con questo. Posso aiutarti a scoprire fatti e aneddoti sullo spazio, basta che mi chiedi di dirti un aneddoto. Come posso aiutarti?",
+		"FALLBACK_REPROMPT": "Come posso aiutarti?",
+		"ERROR_MESSAGE": "Spiacenti, si è verificato un errore.",
+		"STOP_MESSAGE": "A presto!",
+		"FACTS": [
+			"Sul pianeta Mercurio, un anno dura solamente 88 giorni.",
+			"Pur essendo più lontana dal Sole, Venere ha temperature più alte di Mercurio.",
+			"Su Marte il sole appare grande la metà che su la terra.",
+			"Tra tutti i pianeti del sistema solare, la giornata più corta è su Giove.",
+			"Il Sole è quasi una sfera perfetta."
+		]
+	},
+	"it-IT": {
+		"SKILL_NAME": "Aneddoti dallo spazio"
+	},
+	"ja": {
+		"SKILL_NAME": "日本語版豆知識",
+		"GET_FACT_MESSAGE": "知ってましたか？ {}",
+		"HELP_MESSAGE": "豆知識を聞きたい時は「豆知識」と、終わりたい時は「おしまい」と言ってください。どうしますか？",
+		"HELP_REPROMPT": "どうしますか？",
+		"ERROR_MESSAGE": "申し訳ありませんが、エラーが発生しました",
+		"STOP_MESSAGE": "さようなら",
+		"FACTS": [
+			"水星の一年はたった88日です。",
+			"金星は水星と比べて太陽より遠くにありますが、気温は水星よりも高いです。",
+			"金星は反時計回りに自転しています。過去に起こった隕石の衝突が原因と言われています。",
+			"火星上から見ると、太陽の大きさは地球から見た場合の約半分に見えます。",
+			"木星の<sub alias='いちにち'>1日</sub>は全惑星の中で一番短いです。",
+			"天の川銀河は約50億年後にアンドロメダ星雲と衝突します。"
+		]
+	},
+	"ja-JP": {
+		"SKILL_NAME": "日本語版豆知識"
+	},
+	"pt": {
+		"SKILL_NAME": "Fatos Espaciais",
+		"GET_FACT_MESSAGE": "Aqui vai: {}",
+		"HELP_MESSAGE": "Você pode me perguntar por um fato interessante sobre o espaço, ou, fexar a skill. Como posso ajudar?",
+		"HELP_REPROMPT": "O que vai ser?",
+		"FALLBACK_MESSAGE": "A skill fatos espaciais não tem uma resposta para isso. Ela pode contar informações interessantes sobre o espaço, é só perguntar. Como posso ajudar?",
+		"FALLBACK_REPROMPT": "Eu posso contar fatos sobre o espaço. Como posso ajudar?",
+		"ERROR_MESSAGE": "Desculpa, algo deu errado.",
+		"STOP_MESSAGE": "Tchau!",
+		"ANOTHER_FACT":["Would you like another fact?", "Can I tell you another fact?",
+				"Do you want to hear another fact?"],
+		"FACTS": [
+			"Um ano em Mercúrio só dura 88 dias.",
+			"Apesar de ser mais distante do sol, Venus é mais quente que Mercúrio.",
+			"Visto de marte, o sol parece ser metade to tamanho que nós vemos da terra.",
+			"Júpiter tem os dias mais curtos entre os planetas no nosso sistema solar.",
+			"O sol é quase uma esfera perfeita."
+		]
+	},
+	"pt-BR": {
+		"SKILL_NAME": "Fatos Espaciais"
+	},
+	"de-DE": {
+		"SKILL_NAME": "Weltraumwissen",
+		"GET_FACT_MESSAGE": "Hier sind deine Eco tip uber {}: {}. {}",
+		"HELP_MESSAGE": "Du kannst sagen, „Nenne mir einen Fakt über den Weltraum“, oder du kannst „Beenden“ sagen... Wie kann ich dir helfen?",
+		"HELP_REPROMPT": "Wie kann ich dir helfen?",
+		"FALLBACK_MESSAGE": "Die Weltraumfakten Skill kann dir dabei nicht helfen. Sie kann dir Fakten über den Raum erzählen, wenn du dannach fragst.",
+		"FALLBACK_REPROMPT": "Wie kann ich dir helfen?",
+		"ERROR_MESSAGE": "Es ist ein Fehler aufgetreten.",
+		"STOP_MESSAGE": "Auf Wiedersehen!",
+		"FACTS": {
+			"Haus": ["Bitte recyceln Sie so viel wie möglich, informieren Sie sich darüber, wie Sie Abfälle von Ihren örtlichen Behörden entsorgen können", "Reinigen Sie Ihre Oberflächen mit Wasser und Essig, ich verspreche, es riecht nicht!", "Kaufen Sie Terrakota, nicht Plastik, Töpfe für Ihre Pflanzen "," Entsorgen Sie niemals gebrauchtes Speiseöl in der Spüle "," Entsorgen Sie außer gebrauchtem Toilettenpapier keinen Müll in der Toilette ",
+				"Vermeiden Sie Küchenpapier, sondern Waschlappen", "Ersetzen Sie Glühbirnen durch Kompaktleuchtstofflampen"
+			],
+			"Lebensmittel": ["Vermeiden Sie verarbeitete Lebensmittel", "Versuchen Sie, Ihr tierisches Protein durch pflanzliches Protein zu ersetzen", "Vermeiden Sie rotes Fleisch, Geflügel verursacht weniger Emissionen", "Vermeiden Sie große Fische wie Thunfisch oder Schwertfisch, sie enthalten größere Mengen Quecksilber und andere Metalle",
+				"Vermeiden Sie es, mehr Lebensmittel als nötig zu essen, und laden Sie eine App herunter, um sie zu kontrollieren", "Kaufen Sie Produkte der lokalen Saison. Um den Markt zu erreichen, wurden weniger Kohlendioxidemissionen verursacht und sie haben eine geringere Strecke zurückgelegt"
+			],
+			"Einkaufen": ["Vermeiden Sie Wasser in Flaschen, wenn das lokale Leitungswasser trinkbar ist", "Kaufen Sie keine Plastikwerkzeuge für die Küche, sondern Eisen- oder Holzwerkzeuge", "Erwägen Sie den Kauf von Kleidung in Secondhand-Läden", "Vermeiden Sie Kleidung aus Baumwolle ist die beste Wahl! "," Berechnen und reduzieren Sie die Menge an Kleidung, die Sie jährlich kaufen ",
+				"Vermeiden Sie kleine monatliche Ausgaben, damit Sie sie in eine Umweltschutzorganisation investieren können", "Unterstützen Sie Ihr lokales Bio-Geschäft. Da sie nicht mit Skaleneffekten rechnen, wird es teurer. Sie werden jedoch ihre Entwicklung unterstützen",
+				"Kümmern Sie sich um Ihr Smartphone. Stellen Sie es in den Werksmodus zurück und verhindern Sie, dass es herunterfällt.", "Verwenden Sie Seifenstücke anstelle von Körperwäsche in einer Plastikflasche.", "Kaufen Sie überall keine Produkte aus gefährdeten Arten wie Elfenbein, Schildpatt, Echsenhaut, Pelzmäntel und Lebensmittelprodukte aus gefährdeten Tieren oder Pflanzen",
+				"Während Ihres Aufenthalts in einem Hotel sollten Sie diese benachrichtigen, um die Bettwäsche und Handtücher nicht täglich zu wechseln. Auf diese Weise tragen Sie viel zur Wassereinsparung bei"
+			],
+			"Transport": ["Öffentliche Verkehrsmittel und gemeinsame Nutzung von Fahrzeugen sollten immer die erste Wahl sein", "Wenn möglich, reisen Sie mit dem Zug anstelle von Auto und Flugzeug", "Während Ihres Urlaubs sollten Sie an einen Ort reisen, für den kein Flugzeug erforderlich ist dort "," Starten Sie einen Sparplan, damit das nächste Auto, das Sie kaufen, Hybrid oder Elektro ist","Wenn Sie Motorräder mögen, sollten Sie ein elektrisches kaufen ",
+					"Halten Sie Ihr Fahrzeug während der Fahrt auf einer konstanten Geschwindigkeit, um Kraftstoff zu sparen", "Verwenden Sie in Ihrem Auto Reifen, die für Kraftstoffeinsparung oder Geräuschreduzierung ausgelegt sind", "Versuchen Sie, das Fahren im Gelände auf ein Minimum zu beschränken - dies stört die natürliche Umgebung und hat wichtige Konsequenzen vor Ort"
+			],
+			"Arbeitsbereich": ["Verwenden Sie für Ihre eigenen Notizen einen Bleistift anstelle eines Stiftes", "Schalten Sie Ihren Computer aus und überwachen Sie die Bildschirme, wenn Sie nach Hause gehen", "Überlegen Sie, ob Sie mit dem Fahrrad arbeiten, Ihr Auto teilen oder öffentliche Verkehrsmittel nutzen möchten "," Bringen Sie Ihr eigenes Essen zur Arbeit, die meisten Restaurants und Bars in den Büros verursachen viel nicht recycelbaren Abfall",
+					"Vermeiden Sie die Verwendung eines einfachen Plastikartikels wie Tassen und Silberkleidung. Bringen Sie diese von zu Hause mit.", "Arbeiten Sie von zu Hause aus, wann immer dies möglich ist."
+			],
+			"Energie": ["Schalten Sie Ihr Telefon nachts aus, verwenden Sie mich als Wecker!", "Vermeiden Sie die Verwendung des Geschirrspülers", "Versuchen Sie, die Klimaanlage auszuschalten", "Schalten Sie das Licht aus, wenn Sie einen Raum verlassen", "Tragen Sie im Winter zu Hause warme Kleidung, um die Verwendung der Heizung zu vermeiden", "Verwenden Sie eine Bürste anstelle eines Staubsaugers", "Ersetzen Sie Ihre Fernsehunterhaltung durch Bücher oder unterhalten Sie sich mit anderen Mitgliedern des Hauses",
+				"Schalten Sie den Ofen und den Herd aus, bevor Sie mit dem Kochen fertig sind, um die Restwärme zu nutzen."
+			],
+			"Gesellschaft": ["Versuchen Sie, Ihre Familie und Freunde davon zu überzeugen, diese Öko-Tipps zu befolgen, vor allem für die Kinder!", "Denken Sie daran, dass es nicht darum geht, alles perfekt und schnell zu machen, sondern konsequent und bewusst über Ihre Auswirkungen zu sein", " Stimmen Sie für Politiker, die nachhaltige Programme unterstützen ",
+					"Ein guter Plan für das Wochenende? Gehen Sie zum nächsten Park, Strand oder Berg und räumen Sie mit Ihren Freunden auf! Sie können sich auch einer Wohltätigkeitsorganisation anschließen, die diese Art von Aktivitäten organisiert", "Haben Sie jemals Ploggen gemacht? Es geht joggen Während Sie den gefundenen Müll säubern! "," Laden Sie ecosia als Ihren Web- und Telefonbrowser herunter. Ein Teil der Gewinne fließt in das Pflanzen von Bäumen. ",
+					"Entsorgen Sie Zigaretten niemals auf dem Meer. Der Abbau eines Filters dauert 1 bis 5 Jahre. Er kann von Seevögeln, Fischen und Meeressäugern mit tragischen Folgen gefressen werden."
+			]
+		}
+	}
+}
