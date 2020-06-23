@@ -30,11 +30,12 @@ class TestHandler(AbstractRequestHandler):
     def handle(self, handler_input):
         # type: (HandlerInput) -> Responsejam
         speak_output = "TEST ANSWER"
+        reprompt = "Hola?"
 
         return (
             handler_input.response_builder
                 .speak(speak_output)
-                .ask("hola?")
+                .ask(reprompt)
                 .response
         )
 
@@ -77,13 +78,20 @@ class GetNewFactHandler(AbstractRequestHandler):
         random_topic = random.choice(categories)
         random_fact = random.choice(data[prompts.FACTS][random_topic])
 
-        speech = data[prompts.GET_FACT_MESSAGE].format(random_topic,random_fact)
+        question = random.choice(data[prompts.ANOTHER_FACT])
+
+        reprompt_question = "You can ask me for a fact!"
+
+        speech = data[prompts.GET_FACT_MESSAGE].format(random_topic,random_fact,question)
         #reprompt = mf.get_random_yes_no_question()
 
-        handler_input.response_builder.speak(speech).set_card(
-            SimpleCard(data[prompts.SKILL_NAME], random_fact))
+        handler_input.response_builder.speak(speech).ask(reprompt_question).set_card(SimpleCard(data[prompts.SKILL_NAME], random_fact))
 
-        return handler_input.response_builder.response
+        return (
+            handler_input.response_builder
+                .speak(speech)
+                .response
+        )
 
 class GetCategoryFactHandler(AbstractRequestHandler):
     """Handler for Skill Launch and GetNewFact Intent."""
@@ -105,22 +113,26 @@ class GetCategoryFactHandler(AbstractRequestHandler):
         fact_category = mf.get_category_value(
         handler_input.request_envelope.request, 'category')
 
+        reprompt_question = "You can ask me for a fact!"
+
+        question = random.choice(data[prompts.ANOTHER_FACT])
+
         logger.info("FACT CATEGORY = {}".format(fact_category))
 
         if fact_category in categories:
             random_fact = random.choice(data[prompts.FACTS][fact_category])
-            speech = data[prompts.GET_FACT_MESSAGE].format(fact_category,random_fact)
+            speech = data[prompts.GET_FACT_MESSAGE].format(fact_category,random_fact,question)
 
-            handler_input.response_builder.speak(speech).set_card(
+            handler_input.response_builder.speak(speech).ask(reprompt_question).set_card(
             SimpleCard(data[prompts.SKILL_NAME], random_fact))
             return handler_input.response_builder.response
 
         else:
             random_topic = random.choice(categories)
             random_fact = random.choice(data[prompts.FACTS][random_topic])
-            speech = data[prompts.GET_FACT_MESSAGE].format(random_topic, random_fact)
+            speech = data[prompts.GET_FACT_MESSAGE].format(random_topic, random_fact,question)
 
-            handler_input.response_builder.speak(speech).set_card(
+            handler_input.response_builder.speak(speech).ask(reprompt_question).set_card(
             SimpleCard(data[prompts.SKILL_NAME], random_fact))
             return handler_input.response_builder.response
 

@@ -164,8 +164,9 @@ class NoHandler(AbstractRequestHandler):
         def handle(self, handler_input):
             # type: (HandlerInput) -> Response
             logger.info("In NoHandler")
-            #Change this so we use the JSON:
-            goodbye = mf.get_random_goodbye()
+
+            data = handler_input.attributes_manager.request_attributes["_"]
+            goodbye = random.choice(data[prompts.STOP_MESSAGE])
 
             return handler_input.response_builder.speak(goodbye).set_should_end_session(True).response
 
@@ -197,8 +198,8 @@ class CancelOrStopIntentHandler(AbstractRequestHandler):
 
         def handle(self, handler_input):
             # type: (HandlerInput) -> Response
-            #Use the JSON:
-            speak_output = "Goodbye!"
+            data = handler_input.attributes_manager.request_attributes["_"]
+            goodbye = random.choice(data[prompts.STOP_MESSAGE])
 
             return (
                 handler_input.response_builder
