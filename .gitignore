@@ -1,6 +1,3 @@
-#Virtual environment
-**/virtualenv
-
 #Folder logs
 **/logs/*.log
 
