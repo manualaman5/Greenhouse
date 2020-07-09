@@ -1,7 +1,7 @@
 #Imports
 import random
 
-#Definition of the funtion:
+#This function will be used for retrieving the value in the slot
 def get_category_value(request, slot_name):
     """Resolve the slot name from the request using resolutions."""
     # type: (IntentRequest, str) -> Union[str, None]
@@ -11,6 +11,7 @@ def get_category_value(request, slot_name):
     except (AttributeError, ValueError, KeyError, IndexError):
         return None
 
+#We do not use rest of these functions, but the structure is here
 def get_spoken_value(request, slot_name):
     """Resolve the slot to the spoken value."""
     # type: (IntentRequest, str) -> Union[str, None]

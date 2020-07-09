@@ -20,6 +20,7 @@ logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
 # Built-in Intent Handlers
+#For developing/testing purposes, this test handler has been included
 class TestHandler(AbstractRequestHandler):
         """Handler for Skill Launch."""
         def can_handle(self, handler_input):
@@ -39,6 +40,7 @@ class TestHandler(AbstractRequestHandler):
                     .response
             )
 
+#This is the handler for the skill launch
 class LaunchRequestHandler(AbstractRequestHandler):
         """Handler for Skill Launch."""
         def can_handle(self, handler_input):
@@ -56,6 +58,7 @@ class LaunchRequestHandler(AbstractRequestHandler):
                     .response
             )
 
+#This is the handler for a brand new fact/ecotip
 class GetNewFactHandler(AbstractRequestHandler):
 
         def can_handle(self, handler_input):
@@ -67,23 +70,24 @@ class GetNewFactHandler(AbstractRequestHandler):
             # get localization data
             data = handler_input.attributes_manager.request_attributes["_"]
 
+            #Retrieves the facts dict and computes the categories (keys)
             facts = data[prompts.FACTS]
             categories = [c for c in facts.keys()]
 
+            #Use the random library to select a category and then select a random fact of that category
             random_topic = random.choice(categories)
             random_fact = random.choice(data[prompts.FACTS][random_topic])
 
+            #Random question for the reprompt
             question = random.choice(data[prompts.ANOTHER_FACT])
 
-            reprompt_question = "You can ask me for a fact!"
-
+            #Building the speech like this, we don't have to wait to use the reprompt.
             speech = data[prompts.GET_FACT_MESSAGE].format(random_topic,random_fact,question)
-            #reprompt = mf.get_random_yes_no_question()
 
-            handler_input.response_builder.speak(speech).ask(reprompt_question).set_card(SimpleCard(data[prompts.SKILL_NAME], random_fact))
+            handler_input.response_builder.speak(speech).ask(question).set_card(SimpleCard(data[prompts.SKILL_NAME], random_fact))
 
             return handler_input.response_builder.speak(speech).response
-
+#This is the handler for a fact/ecotip from a specific category
 class GetCategoryFactHandler(AbstractRequestHandler):
 
         def can_handle(self, handler_input):
@@ -95,18 +99,21 @@ class GetCategoryFactHandler(AbstractRequestHandler):
             # get localization data
             data = handler_input.attributes_manager.request_attributes["_"]
 
+            #Retrieves the facts dict and computes the categories (keys)
             facts = data[prompts.FACTS]
             categories = [c for c in facts.keys()]
 
+            #This function will retrieve the desired category
             fact_category = mf.get_category_value(
             handler_input.request_envelope.request, 'category')
 
+            #Building several questions like this, the question at the end of the speech won't be the same as the reprompt
             reprompt_question = "You can ask me for an eco-tip!"
-
             question = random.choice(data[prompts.ANOTHER_FACT])
 
             logger.info("FACT CATEGORY = {}".format(fact_category))
 
+            #In the case that we have the category on our list, we'll just use the dictionary
             if fact_category in categories:
                 logger.info("Category found in the list")
                 random_fact = random.choice(data[prompts.FACTS][fact_category])
@@ -115,7 +122,7 @@ class GetCategoryFactHandler(AbstractRequestHandler):
                 handler_input.response_builder.speak(speech).ask(reprompt_question).set_card(
                     SimpleCard(data[prompts.SKILL_NAME], random_fact))
                 return handler_input.response_builder.response
-
+            #If we do not have that category, we'll response with a random fact
             else:
                 logger.info("Category NOT found in the list")
                 random_topic = random.choice(categories)
@@ -126,8 +133,8 @@ class GetCategoryFactHandler(AbstractRequestHandler):
                     SimpleCard(data[prompts.SKILL_NAME], random_fact))
                 return handler_input.response_builder.response
 
+#Classic hello intent
 class HelloIntentHandler(AbstractRequestHandler):
-
         def can_handle(self, handler_input):
             return ask_utils.is_intent_name("HelloIntent")(handler_input)
 
@@ -144,8 +151,8 @@ class HelloIntentHandler(AbstractRequestHandler):
                     #.response
             )
 
+#This intent is for the reprompts, if the user says yes, we want to reply with another fact
 class YesHandler(AbstractRequestHandler):
-        """If the user says Yes, they want another fact."""
         def can_handle(self, handler_input):
             # type: (HandlerInput) -> bool
             return ask_utils.is_intent_name("YesIntent")(handler_input)
@@ -155,8 +162,8 @@ class YesHandler(AbstractRequestHandler):
             logger.info("In YesHandler")
             return GetNewFactHandler().handle(handler_input)
 
+#If the user says no, we want to close the session and say goodbye
 class NoHandler(AbstractRequestHandler):
-        """If the user says No, then the skill should be exited."""
         def can_handle(self, handler_input):
             # type: (HandlerInput) -> bool
             return ask_utils.is_intent_name("NoIntent")(handler_input)
@@ -170,6 +177,7 @@ class NoHandler(AbstractRequestHandler):
 
             return handler_input.response_builder.speak(goodbye).set_should_end_session(True).response
 
+#Built-in handlers
 class HelpIntentHandler(AbstractRequestHandler):
         #Handler for Help Intent.
         def can_handle(self, handler_input):
